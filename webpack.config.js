@@ -18,7 +18,7 @@ module.exports = {
     clean: true,                           // 新しいビルドの前に'dist'フォルダをクリーンアップ
     assetModuleFilename: '[name][ext]',    // アセットモジュールのファイル名テンプレート
     // 本番環境では '/BPMcalculater/'、開発環境では '/' を使用
-    publicPath: process.env.NODE_ENV === 'production' ? '/BPMcalculater/' : '/', 
+    publicPath: process.env.NODE_ENV === 'production' ? '/DJtimer/' : '/', 
   },
 
   // モジュールルール: 各種ファイルの処理方法を定義
