@@ -1,7 +1,7 @@
 {
   "name": "DJ timer",
   "short_name": "DJ time",
-  "description": "楽曲のBPM変更時のピッチを計算するアプリです。",
+  "description": "DJのプレイ中もオフラインで使えるシンプルタイマー。",
   "start_url": "/DJtimer/",
   "display": "standalone",
   "background_color": "#2D0C59",
