@@ -1,6 +1,6 @@
 {
-  "name": "BPM CALCULATOR",
-  "short_name": "BPM CALC",
+  "name": "DJ timer",
+  "short_name": "DJ time",
   "description": "楽曲のBPM変更時のピッチを計算するアプリです。",
   "start_url": "/DJtimer/",
   "display": "standalone",
