@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ TIMER</title>
+    <meta name="description" content="DJのプレイ中もオフラインで使えるシンプルタイマー。残り時間やセットの進行状況を視覚的に管理できます。">
+    <meta name="keywords" content="DJ, タイマー, BPM, 音楽, プレイ, イベント, ライブ, クラブ, セッション, トラック, 時間管理, 残り時間, テンポ, ミックス, ピッチ, BPM計算, DJツール">
+    <meta name="author" content="Gigandect">
+
+    <meta property="og:title" content="BPM CALCULATER">
+    <meta property="og:description" content="DJのプレイ中もオフラインで使えるシンプルタイマー。残り時間やセットの進行状況を視覚的に管理できます。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="/DJtimer/icons/icon-192x192.png"> 
+    <meta property="og:image" content="https://fuckyou.tokyo/wp-content/uploads/2024/03/ogp.png">
+    <meta property="og:site_name" content="FUCKYOU.tokyo | Gigandect Official Site">
+    <link rel="icon" href="/DJtimer/icons/icon-192x192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/DJtimer/icons/icon-192x192.png" />
+    <meta name="msapplication-TileImage" content="/DJtimer/icons/icon-192x192.png" />
+    <link rel="manifest" href="/DJtimer/manifest.webmanifest">
+</head>
+<body>
+<div class="wrapper">
+    <main>
+        <div class="chart-container">
+            <canvas id="timerCanvas"></canvas>
+        </div>
+        
+        <!-- input section -->
+        <section id="inputSection" class="section">
+            <div class="first input-first">
+                <div class="input-group">
+                    <label for="durationInput">TIME LIMIT (min.):</label>
+                    <input type="number" id="durationInput" min="0" max="999" placeholder="ex:30">
+                </div>
+                <p>OR</p>
+                <div class="input-group">
+                    <label for="endTimeInput">END TIME:</label>
+                    <input type="time" id="endTimeInput">
+                </div>
+            </div>
+            <div class="second">
+                <div class="button-group">
+                    <button id="startButton">Start</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Count section -->
+        <section id="countdownSection" class="section">
+            <div class="time-area">
+                <div class="i">
+                    <p>REMAIN</p>
+                    <div id="remainingTime" class="time">00:00:00</div>
+                </div>
+                <div class="i">
+                    <p>PASSED</p>
+                    <div id="elapsedTime" class="time">00:00:00</div>
+                </div>
+            </div>
+            <div class="timer-buttons">
+                <button id="stopButton">STOP</button>
+                <button id="resetButton">RESET</button>
+            </div>
+        </section>
+
+        <!-- DONE SECTION -->
+        <section id="doneSection" class="section">
+            <p class="big">DONE!</p>
+            <button id="backToInputButton">BACK</button>
+        </section>  
+        
+    </main>
+</div>
+<footer>
+    <p>© 2025 Gigandect. All rights reserved.</p>
+    <p class="hint">?</p>
+</footer>
+
+<div class="hint-overlay"></div>
+<div class="hint-cont">
+    <p class="h2">BPM CALCULATER</p>
+    <p class="h3">インストール方法</p>
+    <p>このページをホーム画面に保存すれば良いよ。そのくらいは自分でもできるよね。</p>
+    <p>ホーム画面に追加しておけば地下とか電波が届かない場所とかオフラインでも使えるよ。</p>
+    <p class="h3">使い方</p>
+    <p>RAW BPMとTARGET BPMに数値を入力するとRESULTにピッチのパーセンテージが出力されるよ。</p>
+    <p>RAW BPMとTARGET BPMには3桁までの数値しか入力できないようになっています。4桁以上入力された場合は後半の3桁だけ入力されるようになっているよ。</p>
+    <p>画面をタップすると平均値を出してRAW BPMにその数値を入力するよ。</p>
+    <p>[+],[-]をタップすると数値を1づつ増減できるよ。</p>
+    <p>RESULTに過剰な数値を出力させるようなバカはいないよね。</p>
+</div>
+</body>
+</html>
