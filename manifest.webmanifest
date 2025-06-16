@@ -1,0 +1,33 @@
+{
+  "name": "DJ timer",
+  "short_name": "DJ time",
+  "description": "DJのプレイ中もオフラインで使えるシンプルタイマー。",
+  "start_url": "/DJtimer/",
+  "display": "standalone",
+  "background_color": "#2D0C59",
+  "theme_color": "#2D0C59",
+  "icons": [
+    {
+      "src": "/DJtimer/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/DJtimer/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/DJtimer/icons/icon-maskable-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/DJtimer/icons/icon-maskable-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
