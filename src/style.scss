@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @import "~normalize.css/normalize.css";
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap'); // ★ここを追加！
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap');
 
 // MIXIN
 @mixin fs($fs) {
@@ -81,20 +81,25 @@ input {
 }
 
 /* スピナーボタンを非表示にするスタイル */
-/* WebKit系のブラウザ（Chrome, Safariなど）用 */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;
-    /* デフォルトのUIを非表示にする */
     margin: 0;
-    /* 余白を削除 */
 }
 
-/* Firefox用 */
 input[type="number"] {
     -moz-appearance: textfield;
     appearance: textfield;
-    /* 数字入力フィールドとして扱う */
+}
+
+input[type="number"] {
+    appearance: none;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    opacity: 0;
+    width: 100%;
 }
 
 .button-group {
@@ -137,16 +142,6 @@ button {
     }
 }
 
-/* その他のブラウザ（もし将来的に対応が必要なら） */
-input[type="number"] {
-    appearance: none;
-}
-
-input[type="time"]::-webkit-calendar-picker-indicator {
-    position: absolute;
-    opacity: 0;
-    width: 100%;
-}
 
 html,
 body {
@@ -234,8 +229,8 @@ footer {
     }
 
     .hint {
-        cursor: pointer; // カーソルを指マークにする
-        user-select: none; // テキスト選択を無効にする
+        cursor: pointer;
+        user-select: none;
         position: fixed;
         bottom: 1rem;
         right: .5rem;
@@ -252,21 +247,20 @@ footer {
 
 /* hint-contの初期状態（非表示で画面外に） */
 .hint-cont {
-    position: fixed; // 画面に固定する
-    bottom: 0; // 画面の下端に配置
+    position: fixed;
+    bottom: 0;
     left: 0;
-    width: 100%; // 全幅にする
-    height: auto; // コンテンツに合わせて高さを自動調整
-    max-height: 80vh; // 例: 画面の高さの80%が最大
-    background-color: $yellow; // 背景色
-    color: $black; // 文字色
-    padding: 1rem; // 内側の余白
-    box-sizing: border-box; // paddingをwidthに含める
-    transform: translateY(100%); // 自身の高さ分だけ下に移動して、画面外に隠す
-    transition: transform 0.2s ease-out; // スムーズにアニメーションさせる
-    z-index: 1000; // 他の要素より手前に表示
-    overflow-y: auto; // 内容が多ければスクロールできるようにする
-
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    background-color: $yellow;
+    color: $black;
+    padding: 1rem;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.2s ease-out;
+    z-index: 1000;
+    overflow-y: auto;
     text-align: left;
     font-family:
         'Roboto',
@@ -303,7 +297,7 @@ footer {
 
 /* hint-contが表示されたときの状態 */
 .hint-cont.is-active {
-    transform: translateY(0); // 元の位置に戻す（画面内に表示）
+    transform: translateY(0);
 }
 
 .hint-overlay {
@@ -328,19 +322,6 @@ footer {
     height: 100%;
 }
 
-
-// #inputSection {
-//     display: none;
-// }
-
-// #countdownSection {
-// display: none;
-// }
-
-// #doneSection {
-// display: none;
-// }
-
 .section {
     display: flex;
     flex-direction: column;
@@ -349,20 +330,20 @@ footer {
     opacity: 0;
     visibility: hidden;
     @include trans();
-    position: absolute; // 要素が重なるように配置
-    top: 50%; // 上下中央に配置
-    left: 50%; // 左右中央に配置
-    transform: translate(-50%, -50%); // 自分自身のサイズの半分だけずらして完全に中央に
-    width: calc(100% - 4rem); // bodyのpadding分を考慮
-    max-width: 700px; // wrapperのmax-widthに合わせる
-    height: calc(100% - 4rem); // bodyのpadding分を考慮しつつ、高さを確保
-    justify-content: center; // コンテンツを縦方向にも中央揃え
-    align-items: center; // コンテンツを横方向にも中央揃え
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: calc(100% - 4rem);
+    max-width: 700px;
+    height: calc(100% - 4rem);
+    justify-content: center;
+    align-items: center;
 
     &.is-active-section {
         transform: translate(-50%, -50%);
-        opacity: 1; // 不透明に
-        visibility: visible; // 表示   
+        opacity: 1;
+        visibility: visible;
     }
 }
 
